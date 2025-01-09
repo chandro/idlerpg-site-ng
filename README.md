@@ -38,7 +38,7 @@ composer update -y
 To create your new idlerpg-site-ng:
 
 ```bash
-git clone https://github.com/falsovsky/idlerpg-site-ng.git idlerpg
+git clone https://github.com/chandro/idlerpg-site-ng.git idlerpg
 ```
 
 Edit the default configuration file to set the path to your bot files, bot name, etc:
