@@ -13,12 +13,12 @@
 
 return [
     'idlerpg' => [
-        'bot_nick'     => 'Idle',
-        'bot_channel'  => '#idle',
-        'bot_db'       => '/path/to/irpg.db',
-        'bot_item'     => '/path/to/mapitems.db',
-        'bot_mod'      => '/path/to/modifiers.txt',
-        'bot_quest'    => '/path/to/questinfo.txt',
+        'bot_nick'     => 'idlebot',
+        'bot_channel'  => '#idlerpg',
+        'bot_db'       => '/home/idle/irpg.db',
+        'bot_item'     => '/root/idlerpg/module/Application/test/testcases/mapitems.db',
+        'bot_mod'      => '/root/idlerpg/module/Application/test/testcases/modifiers.txt',
+        'bot_quest'    => '/home/idle/questinfo.txt',
 
         'network_name' => 'ExampleNet',
         'network_host' => 'irc.example.org',
