@@ -17,6 +17,26 @@ The easiest way to install the site is to use
 [Composer](https://getcomposer.org/).  If you don't have it already installed,
 then please install as per the [documentation](https://getcomposer.org/doc/00-intro.md).
 
+
+
+INSTALAR COMPOSER en UBUNTU
+
+#!/bin/bash
+sudo apt update && sudo apt upgrade -y
+
+sudo apt install php php-cli php-xml php-mbstring unzip curl git -y
+
+sudo apt install php7.4 php7.4-cli php7.4-fpm php7.4-mysql php7.4-xml php7.4-mbstring php7.4-curl -y
+
+sudo update-alternatives --set php /usr/bin/php7.4
+
+curl -sS https://getcomposer.org/installer | php
+
+sudo mv composer.phar /usr/local/bin/composer
+
+composer update -y
+
+
 To create your new idlerpg-site-ng:
 
 ```bash
