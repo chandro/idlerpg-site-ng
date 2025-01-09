@@ -21,40 +21,40 @@ then please install as per the [documentation](https://getcomposer.org/doc/00-in
 
 INSTALAR COMPOSER en UBUNTU
 
+```bash
 #!/bin/bash
 sudo apt update && sudo apt upgrade -y
-
 sudo apt install php php-cli php-xml php-mbstring unzip curl git -y
-
 sudo apt install php7.4 php7.4-cli php7.4-fpm php7.4-mysql php7.4-xml php7.4-mbstring php7.4-curl -y
-
 sudo update-alternatives --set php /usr/bin/php7.4
-
 curl -sS https://getcomposer.org/installer | php
-
+php -r "copy('https://getcomposer.org/installer', 'composer-setup.php');"
+php composer-setup.php --version=1.10.26
+php -r "unlink('composer-setup.php');"
 sudo mv composer.phar /usr/local/bin/composer
-
 composer update -y
-
+```
 
 To create your new idlerpg-site-ng:
 
 ```bash
-$ git clone https://github.com/falsovsky/idlerpg-site-ng.git path/to/install
+git clone https://github.com/falsovsky/idlerpg-site-ng.git idlerpg
 ```
 
 Edit the default configuration file to set the path to your bot files, bot name, etc:
 
 ```bash
-$ cd path/to/install
-$ cp config/autoload/local.php.dist config/autoload/local.php
-$ nano config/autoload/local.php
+cd idlerpg
+cp config/autoload/local.php.dist config/autoload/local.php
+nano config/autoload/local.php
 ```
 
 Now lets install the PHP dependencies via composer (Choose **"Do not inject"** if asked):
 
 ```bash
 $ composer install
+
+$ apt remove apache2
 ```
 
 Once everything is installed, you can test it out immediately using PHP's built-in web server:
@@ -63,6 +63,10 @@ Once everything is installed, you can test it out immediately using PHP's built-
 $ php -S 0.0.0.0:8080 -t public/ public/index.php
 # OR use the composer alias:
 $ composer run --timeout 0 serve
+
+# or use nohup
+$ nohup php -S 0.0.0.0:80 -t public/ public/index.php > server.log 2>&1 &
+
 ```
 
 This will start the cli-server on port 8080, and bind it to all network
